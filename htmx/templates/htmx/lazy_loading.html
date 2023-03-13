@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+<style type="text/css" media="all">
+  .htmx-settling img {
+    opacity: 0;
+  }
+  img {
+   transition: opacity 300ms ease-in;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Lazy Loading</h1>
+<p>Gently load content after initial in loaded</p>
+<br>
+<div hx-get="/graph" hx-trigger="load">
+  <img  alt="Result loading..." class="htmx-indicator" width="150" src="{% static 'image.JPG' %}"/>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+<h1>Toggle Message</h1>
+<p>Initially load some text, on click load other</p>
+<div id="message" hx-get="{% url 'alternate' %}">
+  <span>
+    Default message...
+  </span>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1>Static Site Demos</h1>
+  <br>
+  <table class="table table-bordered">
+    <tr>
+      <td><a href="{% url 'validation' %}">Register Validation</a></td>
+      <td>Validate input on typing</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'listing' %}">Listing & Creating</a></td>
+      <td>Updating on creating</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'click_to_load' %}">click to load</a></td>
+      <td>Inline loading of the next page of data</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'toggle_message' %}">Toggle message</a></td>
+      <td>Initially load some text, on click load other</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'lazy-loading' %}">Lazy loading</a></td>
+      <td>Gently load content after initial in loaded</td>
+    </tr>
+    <tr>
+      <td><a href="{% url 'courses' %}">Chained drop-down/ Cascade selecting</a></td>
+      <td>Dynamic selection</td>
+    </tr>
+    <tr>
+      <td><a href="">Tabs using HATEOAS</a></td>
+      <td>They don't have to be hard, you don't have to break the web</td>
+    </tr>
+    <tr>
+      <td><a href="">Tabs using Hyperscript</a></td>
+      <td>Sprinkle in a little script using Hyperscript</td>
+    </tr>
+  </table>
+{% endblock %}

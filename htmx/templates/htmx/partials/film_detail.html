@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-between align-items-top">
+  <div>
+    <h2 class="text-success mb-4">{{ film.name }}</h2>
+    <p>This is #{{ film.order }} item in film list</p>
+    <button class="btn btn-primary" type="submit" hx-get="{% url 'listing' %}" hx-target="#film-list" hx-push-url="/films">Your list</button>
+  </div>
+  <div>
+    {% if film.photo %}
+      <img src="{{ film.photo.url }}" alt="" style="max-heigth: 200px; max-width: 200px;">
+      <br>
+    {% else %}
+      <p>No photo</p>
+    {% endif %}
+      <form hx-encoding="multipart/form-data" hx-post="{% url 'upload-photo' film.pk %}" hx-target="#film-list">
+        {% csrf_token %}
+        <div class="form-group">
+          <input type="file" name="photo" id="photo"/>
+        </div>
+        <button type="submit" class="btn btn-success">Upload photo</button>
+      </form>
+  </div>
+</div>

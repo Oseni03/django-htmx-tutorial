@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+  <h1>
+    Click to load
+  </h1>
+  <p>Inline loading of the next page of data</p>
+  <table>
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ayomide</td>
+        <td>Oseni</td>
+      </tr>
+      {% comment %}
+      <tr id="replaceMe"></tr>
+      {% endcomment %}
+      <tr>
+        <td colspan="2">
+          <button class="button" hx-get="{% url 'page2' %}" hx-target="closest tr" hx-swap="outerHTML">
+            Load More
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

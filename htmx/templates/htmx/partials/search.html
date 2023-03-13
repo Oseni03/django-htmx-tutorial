@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-end mb-4">
+  {% csrf_token %}
+  <input type="search" name="search" hx-post="{% url 'search-film' %}" hx-trigger="keyup changed delay:500ms, search" hx-target="#results" class="form-control-sn mr-2" placeholder="search films..." hx-indicator=".htmx-indicator"/>
+</div>
+<div id="results">
+</div>
